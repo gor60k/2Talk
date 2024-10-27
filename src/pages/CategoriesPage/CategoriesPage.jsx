@@ -29,7 +29,7 @@ export const CategoriesPage = () => {
         <div className="wrapper">
           <div className="page-container">
             {/* <Sidebar /> */}
-            <div className="categories_page-wrapper">
+            <div className="page-wrapper">
               <div className="categories_page-head page-head">
                 <span>Categories</span>
               </div>

@@ -17,114 +17,11 @@
 @import '../pages/RoomPage/RoomPage.scss';
 @import '../pages/SettingsPage/SettingsPage.scss';
 
-[data-theme="light"] {
-
-    .page-list-wrapper,
-    .talk_card,
-    .sidebar_list,
-    .page-card,
-    .settings_page-theme-button,
-    .modal {
-        border: 1px solid $base-black;
-    }
-
-    .sidebar_logo {
-        fill: $base-black
-    }
-
-    span,
-    p {
-        color: $base-black;
-    }
-}
-
-
-
-[data-theme="dark"] {
-
-    .page-list-wrapper,
-    .talk_card,
-    .sidebar_list,
-    .page-card,
-    .settings_page-theme-button,
-    .user_page-card,
-    .modal,
-    .room_page-wrapper,
-    .messenger_container-bot-input,
-    .room_sidebar-slider, 
-    .message_content,
-    .base_input {
-        border: 1px solid $base-white;
-    }
-
-    .room_page {
-        .page-head {
-            border-bottom: 1px solid $base-white;
-        }
-    }
-
-    .messenger_container-bot {
-        border-top: 1px solid $base-white;
-    }
-
-    input {
-        color: $base-white
-    }
-
-    .sidebar_list-item {
-        background: url('../assets/icons/button-border-white.svg') center no-repeat;
-        background-size: contain;
-    }
-
-    .room_sidebar-slider {
-        .swiper-slide {
-            background: url('../assets/icons/button-border-white.svg') center no-repeat;
-            background-size: contain;
-        }
-    }
-
-    .card_bg {
-        display: none;
-    }
-
-    svg {
-        path {
-            stroke: $base-white;
-        }
-    }
-
-    .sidebar_logo {
-        fill: $base-white
-    }
-
-    .page-card,
-    .user_page-card,
-    .sidebar_list,
-    .modal,
-    .messenger_container-bot,
-    #chat-message-input,
-    .messenger_container-bot-input,
-    .messenger_container-content {
-        background: $base-black;
-    }
-
-    .message {
-        * {
-            background: $base-black;
-        }
-    }
-
-    span,
-    p,
-    a,
-    button, h1 {
-        color: $base-white;
-    }
-}
-
 body {
-    background: $base-white;
-    font-family: 'Arbutus Slab';
+    // background: $base-white;
+    // background: white;
+    background: #202225;
+    font-family: 'Ubuntu';
     color: $base-black;
     transition: .5s;
 
@@ -141,14 +38,6 @@ body {
     a {
         text-decoration: none;
         color: $base-black;
-    }
-
-    &:has([data-theme="light"]) {
-        background: $base-white;
-    }
-
-    &:has([data-theme="dark"]) {
-        background: $base-black;
     }
 }
 
@@ -209,7 +98,11 @@ body {
         height: 100%;
         display: flex;
         align-items: center;
+        flex-direction: column;
         justify-content: center;
+        gap: 2px;
+        // background: rgb(245, 245, 247);
+        // background: #292b2f;
     }
 
     &-half {
@@ -236,45 +129,43 @@ body {
         display: flex;
         align-items: center;
         justify-content: center;
-        margin-bottom: 50px;
+        background: #292b2f;
+        padding: 10px;
 
         span {
             font-size: 45px;
+            // color: #7289da;
+            background: url('../assets/images/text-back.jpg');
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
     }
 
     &-list {
-        display: grid;
-        // padding-right: 15px;
-        height: 100%;
         width: 100%;
-        grid-template-columns: repeat(4, minmax(200px, 1fr));
-        grid-template-rows: 195px;
-        /* Карточки будут занимать минимум 200px и растягиваться на всю доступную ширину */
-        gap: 10px;
-        /* Отступ между карточками */
-        overflow: auto;
+        height: 100%;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        grid-gap: 20px;
     }
 
     &-list-wrapper {
         padding: 20px;
-        border: 1px solid $base-black;
-        border-radius: 50px;
         width: 100%;
         height: 100%;
         overflow: hidden;
+        background: #292b2f;
     }
 
     &-container {
         width: 100%;
         height: 100%;
         display: flex;
-        // flex-direction: column;
         align-items: flex-start;
-        // justify-content: center;
         justify-content: center;
-        // border-radius: 10px;
         gap: 25px;
+        // padding: 10px 10px 10px 0px;
+        padding: 2px 2px 2px 0px;
     }
 
     &-scroll-container {
@@ -334,6 +225,18 @@ body {
     &:last-child {
         margin-bottom: 0;
     }
+}
+
+.base-button {
+    padding: 10px 0px;
+    border: 1px solid white;
+    color: white;
+    max-width: 100px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
 }
 
 .fadeIn {
@@ -426,10 +329,6 @@ body {
     .page {
         &-list {
             grid-template-columns: repeat(1, minmax(200px, 1fr));
-        }
-
-        &-head {
-            margin-bottom: 20px;
         }
     }
 }

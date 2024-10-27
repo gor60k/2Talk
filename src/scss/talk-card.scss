@@ -1,49 +1,117 @@
+$colors: #3b28cc, #2667ff, #3f8efc, #87bfff;
+
 .talk_card {
+    background: #2f3136;
+    width: 100%;
+    // height: 100%;
+    position: relative;
+    z-index: 1;
+    // padding: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+    max-height: 200px;
 
-    border: 1px solid $base-black;
-    // border-radius: 50px;
-    border-radius: 30px;
-    &-wrapper {
-        position: relative;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-        padding: 25px;
-        border-radius: 20px;
-        transition: .3s;
-    }
-
-    &-img-wrapper {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        overflow: hidden;
-    }
-
-    .card_bg {
+    
+    &::after {
+        content: '';
         position: absolute;
-        top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
+        height: 5%;
+        bottom: 0;
+        left: 0;
+        transition: .3s;
         z-index: -1;
+        opacity: 0.5;
+        // background: #0077b6;
     }
 
-    &-info {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        gap: 5px;
-
-        p {
-            @extend .text;
-            color: $base-black;
-            font-size: 16px;
-            transition: .3s;
+    &:nth-child(4n + 1) {
+        &::after {
+            background: nth($colors, 1);
         }
     }
 
+    &:nth-child(4n + 2) {
+        &::after {
+            background: nth($colors, 2);
+        }
+    }
+
+    &:nth-child(4n + 3) {
+        &::after {
+            background: nth($colors, 3);
+        }
+    }
+
+    &:nth-child(4n + 4) {
+        &::after {
+            background: nth($colors, 4);
+        }
+    }
+
+    &:hover {
+        transition: .3s;
+
+        &::after {
+            height: 100%;
+            transition: .3s;
+        }
+
+        &::before {
+            left: 0;
+            transition-delay: .3s;
+            // transition: .3s;
+        }
+
+        .talk_card-info {
+            left: 0%;
+            transition-delay: .3s;
+            // transition: .3s;
+        }
+
+        .base-button {
+            right: 20px;
+            transition-delay: .3s;
+        }
+    }
+
+    &-wrapper {
+        width: 100%;
+        height: 100%;
+        position: relative;
+
+        p {
+            color: white;
+        }
+    }
+
+    &-info {
+        max-width: 200px;
+        top: 0;
+        left: 0;
+        height: 100%;
+        position: absolute;
+        left: -100%;
+        background: #2f3136;
+        // z-index: ;
+        padding: 20px;
+        transition: .3s;
+    }
+
+    &-title {
+        position: absolute;
+        right: 20px;
+        top: 20px;
+    }
+
+    .base-button {
+        position: absolute;
+        bottom: 20px;
+        right: -100%;
+        transition: .3s;
+
+        &:hover {
+            background: #2f3136;
+        }
+    }
 }

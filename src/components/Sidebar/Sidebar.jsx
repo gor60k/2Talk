@@ -17,9 +17,6 @@ export const Sidebar = () => {
     const toggleSidebar = () => {
         setOpenSidebar(!openSidebar);
     }
-    // const size = useResize();
-
-    // const [isMobile, setIsMobile] = useState(false);
 
     const navigate = useNavigate();
 
@@ -37,36 +34,25 @@ export const Sidebar = () => {
         }
     }
 
-    // useEffect(() => {
-    //     setIsMobile(size.width <= 768);
-    // }, [size.width]);
-
-    // const sidebarClass = isMobile ? 'sidebar_overflow mobile' : 'sidebar_overflow';
-
     return (
         <>
-            {/* <div className={sidebarClass}> */}
                 <div className={openSidebar ? 'sidebar open' : 'sidebar'}>
-                    <div className="sidebar_mobil-cross" onClick={toggleSidebar}>
+                    <div className="sidebar_mobile-cross" onClick={toggleSidebar}>
                         <Cross width={50} height={50} />
                     </div>
                     <div className="sidebar_wrapper">
-                        <Logo className="sidebar_logo" width={100} />
+                        {/* <Logo className="sidebar_logo" width={100} /> */}
                         <ul className="sidebar_list">
-                            <li className="sidebar_list-item">
-                                <NavLink to={USER_ROUTE}><User /></NavLink>
-                            </li>
-                            <li className="sidebar_list-item">
+                            {/* <li className="sidebar_list-item">
                                 <NavLink to={CATEGORIES_ROUTE}><Rooms /></NavLink>
-                            </li>
-                            <li className="sidebar_list-item">
+                            </li> */}
+                            {/* <li className="sidebar_list-item">
                                 <NavLink to={SETTINGS_ROUTE}><Settings /></NavLink>
-                            </li>
-                            <button className='sidebar_list-item' onClick={logOut}><Exit /></button>
+                            </li> */}
+                            {/* <button className='sidebar_list-item' onClick={logOut}><Exit /></button> */}
                         </ul>
                     </div>
                 </div>
-            {/* </div> */}
         </>
     )
 }
